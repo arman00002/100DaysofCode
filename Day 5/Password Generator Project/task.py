@@ -6,5 +6,15 @@ print("Welcome to the PyPassword Generator!")
 nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
-
-
+password=''
+import random
+for i in range(0,nr_letters):
+    password+=random.choice(letters)
+for i in range(0, nr_symbols):
+    password+=random.choice(symbols)
+for i in range(0,nr_numbers):
+    password+=random.choice(numbers)
+pass_list=list(password)
+random.shuffle(pass_list)
+password=''.join(pass_list)
+print(f"Your Password: {password}")
